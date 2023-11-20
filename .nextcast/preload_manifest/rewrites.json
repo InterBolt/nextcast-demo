@@ -1,0 +1,17 @@
+{
+  "dangerous": {
+    "history": [
+      {
+        "filePath": "/Users/colinlaptop/dev/interbolt/nextcast-demo/shared/PreloadManifest.ts",
+        "code": "\n        const PreloadManifest = {\n  \"/about/(somegroup)/other/page\": [\n    \"data_A\"\n  ],\n  \"/about/(somegroup)/page\": [\n    \"data_A\"\n  ],\n  \"/about/inner/page\": [\n    \"data_A\"\n  ],\n  \"/about/page\": [\n    \"data_A\"\n  ]\n} as const;\n\n        export default PreloadManifest;\n    "
+      }
+    ],
+    "toCommit": {
+      "/Users/colinlaptop/dev/interbolt/nextcast-demo/shared/PreloadManifest.ts": "\n        const PreloadManifest = {\n  \"/about/(somegroup)/other/page\": [\n    \"data_A\"\n  ],\n  \"/about/(somegroup)/page\": [\n    \"data_A\"\n  ],\n  \"/about/inner/page\": [\n    \"data_A\"\n  ],\n  \"/about/page\": [\n    \"data_A\"\n  ]\n} as const;\n\n        export default PreloadManifest;\n    "
+    }
+  },
+  "loader": {
+    "history": [],
+    "toCommit": {}
+  }
+}

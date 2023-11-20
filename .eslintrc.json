@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["nextcast"],
+  "rules": {
+    "nextcast/error": 2,
+    "nextcast/warn": 1
+  }
 }

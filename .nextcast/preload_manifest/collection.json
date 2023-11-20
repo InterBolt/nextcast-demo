@@ -1,0 +1,34 @@
+[
+  {
+    "dataType": "data_A",
+    "route": "/about/(somegroup)/other/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/(somegroup)/other/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/(somegroup)/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/(somegroup)/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/inner/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/inner/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/page"
+  }
+]
