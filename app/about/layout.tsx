@@ -1,15 +1,14 @@
-const Layout = ({ children }: { children: React.ReactNode }) => {
+import RandomLayout from "../../src/components/RandomLayout";
+
+const AboutLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="inner-layout">
-      <div className="inner-layout__header">
-        <div className="inner-layout__header__logo"></div>
-        <div className="inner-layout__header__title">
-          <h1>React App</h1>
-        </div>
+    <div className="bg-black w-full flex flex-col justify-center items-center">
+      {children}
+      <div className="w-96">
+        <RandomLayout />
       </div>
-      <div className="inner-layout__content">{children}</div>
     </div>
   );
 };
 
-export default Layout;
+export default AboutLayout;

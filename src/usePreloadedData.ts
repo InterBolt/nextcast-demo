@@ -1,5 +1,5 @@
 export const usePreloadedData = (params: any) => {
-  return "DUMMY DATA HERE";
+  return params;
 };
 
 export default usePreloadedData;

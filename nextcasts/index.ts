@@ -146,12 +146,10 @@ class PreloadManifestPlugin {
     // Note: use `Ctx.queueRewrite` if you only want to modify the code passed to webpack,
     // rather than the source code. The `dangerously` prefix was added for a reason.
     Api.dangerouslyQueueRewrite(
-      `
-        const PreloadManifest = ${JSON.stringify(Ctx.data, null, 2)} as const;
+      pathToSharedManifest,
+      `const PreloadManifest = ${JSON.stringify(Ctx.data, null, 2)} as const;
 
-        export default PreloadManifest;
-    `,
-      pathToSharedManifest
+export default PreloadManifest;`
     );
   };
 }

@@ -1,18 +1,22 @@
-
-        const PreloadManifest = {
+const PreloadManifest = {
+  "/(marketing)/sales/page": [
+    "data_B"
+  ],
   "/about/(somegroup)/other/page": [
-    "data_A"
+    "data_A",
+    "data_B"
   ],
-  "/about/(somegroup)/page": [
-    "data_A"
-  ],
-  "/about/inner/page": [
-    "data_A"
+  "/about/example/page": [
+    "data_B",
+    "data_C"
   ],
   "/about/page": [
-    "data_A"
+    "data_B",
+    "data_C"
+  ],
+  "/page": [
+    "data_B"
   ]
 } as const;
 
-        export default PreloadManifest;
-    
+export default PreloadManifest;

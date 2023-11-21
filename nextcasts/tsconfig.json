@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "../dist/nextcast",
+    "outDir": "../dist/.nextcast",
     "target": "ESNext",
     "module": "commonjs",
     "moduleResolution": "node",

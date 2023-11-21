@@ -11,9 +11,10 @@ const ClientComponent = () => {
   const data_A = usePreloadedData("data_A");
 
   return (
-    <main className="flex flex-col items-center justify-between w-full min-h-screen p-24">
+    <main className="flex flex-col items-center justify-between p-24 bg-gray-600 border border-white rounded-xl">
+      <h2 className="text-white text-center font-bold text-lg">src/components/ClientComponent</h2>
       <DynamicComponent />
-      {data_A}
+      <div className="flex p-24 rounded-md bg-white text-gray-700 semibold text-center">{data_A}</div>
     </main>
   );
 };
