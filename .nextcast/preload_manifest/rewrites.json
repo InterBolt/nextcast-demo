@@ -1,0 +1,17 @@
+{
+  "dangerous": {
+    "history": [
+      {
+        "filePath": "/Users/colinlaptop/dev/interbolt/nextcast-demo/shared/PreloadManifest.ts",
+        "code": "const PreloadManifest = null as const;\n\nexport default PreloadManifest;"
+      }
+    ],
+    "toCommit": {
+      "/Users/colinlaptop/dev/interbolt/nextcast-demo/shared/PreloadManifest.ts": "const PreloadManifest = null as const;\n\nexport default PreloadManifest;"
+    }
+  },
+  "loader": {
+    "history": [],
+    "toCommit": {}
+  }
+}

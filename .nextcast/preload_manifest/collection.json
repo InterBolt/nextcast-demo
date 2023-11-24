@@ -1,0 +1,38 @@
+[
+  {
+    "dataType": "data_B",
+    "route": "/(marketing)/sales/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/(somegroup)/other/page"
+  },
+  {
+    "dataType": "data_A",
+    "route": "/about/(somegroup)/other/page"
+  },
+  {
+    "dataType": "data_B",
+    "route": "/about/(somegroup)/other/page"
+  },
+  {
+    "dataType": "data_B",
+    "route": "/about/example/page"
+  },
+  {
+    "dataType": "data_C",
+    "route": "/about/example/page"
+  },
+  {
+    "dataType": "data_B",
+    "route": "/about/page"
+  },
+  {
+    "dataType": "data_C",
+    "route": "/about/page"
+  },
+  {
+    "dataType": "data_B",
+    "route": "/page"
+  }
+]

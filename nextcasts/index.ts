@@ -9,7 +9,7 @@ type CollectedData = {
 class PreloadManifestPlugin {
   public name = "preload_manifest";
 
-  public collector: TNextcast.Collector = async (Ctx, Api) => {
+  public collector: TNextcast.Collector = (Ctx, Api) => {
     // `Ctx.routes`: Array<{ name: string, files: string[], entries: string[] }>
     // Description: an array of objects where each object contains the following information about
     // a given NextJS route: a list of nextjs-specific entry files (layout, page, template, etc),
@@ -110,7 +110,7 @@ class PreloadManifestPlugin {
     });
   };
 
-  public reducer: TNextcast.Reducer = async (_Ctx, Api) => {
+  public builder: TNextcast.Builder = async (_Ctx, Api) => {
     // The preload manifest file that we set out to create
     const PreloadManifest: Record<string, Array<string>> = {};
 
@@ -125,12 +125,10 @@ class PreloadManifestPlugin {
       }
     });
 
-    // Simply return the manifest and NextCast will store it at
-    // `.nextcast/preload_manifest/data.json`.
-    return PreloadManifest;
+    Api.save(PreloadManifest);
   };
 
-  public rewriter: TNextcast.Rewriter = async (Ctx, Api) => {
+  public rewriter: TNextcast.Rewriter = (Ctx, Api) => {
     // NextCast plugins always run at the project root, so using process.cwd()
     // is the safest way to build FS paths.
     const pathToSharedManifest = resolve(
