@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "common-tags": "^1.8.2",
-    "eslint-plugin-nextcast": "0.1.0-alpha.11",
+    "eslint-plugin-nextcast": "latest",
     "next": "14.0.3",
-    "nextcast": "0.1.0-alpha.11",
+    "nextcast": "latest",
     "react": "^18",
     "react-dom": "^18"
   },
