@@ -1,5 +1,7 @@
+import { existsSync } from "fs";
+import { writeFile } from "fs/promises";
 import { TNextcast } from "nextcast";
-import { resolve } from "path";
+import { dirname, resolve } from "path";
 
 type CollectedData = {
   dataType: string;
@@ -128,7 +130,7 @@ class PreloadManifestPlugin {
     Api.save(PreloadManifest);
   };
 
-  public rewriter: TNextcast.Rewriter = (Ctx, Api) => {
+  public rewriter: TNextcast.Rewriter = async (_Ctx, Api) => {
     // NextCast plugins always run at the project root, so using process.cwd()
     // is the safest way to build FS paths.
     const pathToSharedManifest = resolve(
@@ -137,15 +139,19 @@ class PreloadManifestPlugin {
       "PreloadManifest.ts"
     );
 
-    // `Api.dangerouslyQueueRewrite`: (code: string, file: string) => void
-    // Description: this will rewrite `pathToSharedManifest` and provide a couple of guarantees:
-    // 1) if the file/folder doesn't exist, it will create it and 2) if the path you supply
-    // is not located within your NextJS project, it will throw an error.
-    // Note: use `Ctx.queueRewrite` if you only want to modify the code passed to webpack,
-    // rather than the source code. The `dangerously` prefix was added for a reason.
-    Api.dangerouslyQueueRewrite(
+    if (!existsSync(dirname(pathToSharedManifest))) {
+      throw new Error(
+        `The dir ${dirname(pathToSharedManifest)} does not exist.`
+      );
+    }
+
+    await writeFile(
       pathToSharedManifest,
-      `const PreloadManifest = ${JSON.stringify(Ctx.data, null, 2)} as const;
+      `const PreloadManifest = ${JSON.stringify(
+        Api.getSaved(),
+        null,
+        2
+      )} as const;
 
 export default PreloadManifest;`
     );

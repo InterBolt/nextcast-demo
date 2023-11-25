@@ -1,6 +1,6 @@
-const { withNextcast } = require("nextcast");
+const { withNextCast } = require("nextcast");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {};
 
-module.exports = withNextcast(nextConfig);
+module.exports = withNextCast(nextConfig);
